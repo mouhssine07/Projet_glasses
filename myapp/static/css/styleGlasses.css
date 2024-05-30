@@ -1,0 +1,67 @@
+* {
+  scroll-behavior: smooth;
+}
+.body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-section {
+  padding: 50px 20px;
+  background-color: #f6f6f6;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* To maintain a uniform size */
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.buy-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #b84022;
+  color: white;
+  border: 2px solid #b84022; /* Add border */
+  border-radius: 25px; /* Increase border-radius for a rounded button */
+  margin-top: 10px;
+  transition: background 0.3s, color 0.3s; /* Add color transition */
+}
+
+.buy-button:hover {
+  background: #a7321a;
+  color: #fff; /* Change text color on hover */
+}
+.price {
+  font-size: 14px; /* Adjust font size */
+  color: #666; /* Adjust color */
+  margin-bottom: 5px; /* Adjust spacing */
+}

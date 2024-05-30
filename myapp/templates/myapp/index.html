@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visual World</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styleGlasses.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome/css/font-awesome.css"
+    />
+  </head>
+  <body>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <header>
+      <div class="logo">Visual world</div>
+      <nav>
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#services">SERVICES</a></li>
+          <li><a href="#team">TEAM</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+  <div class="register_icons" style="position: absolute; top: 15%; right: 3.5%;">
+      <div style="display: flex; flex-direction: column; align-items: flex-end;">
+          <a id="register" style="text-decoration: none; color: whitesmoke; font-weight: 800; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;" onclick="toggleSignupForm()" href="#">
+              <i class="fa-solid fa-registered" style="margin-bottom: 10px;   font-weight: 800; font-size: 20px; "></i>
+              <small style="margin-top: 15%; ">Register</small>
+          </a>
+
+      </div>
+      <hr>
+      <div style="display: flex; flex-direction: column; align-items: flex-end; margin-top: 10px;">
+          <a id="login" style="text-decoration: none; color: whitesmoke; font-weight: 800; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;" onclick="toggleLoginForm()" href="#">
+              <i class="fa-solid fa-right-to-bracket" style="margin-bottom: 5px; font-weight: 800; font-size: 20px; "></i>
+              <small style="margin-top: 15%;margin-right: 20px;">Login</small>
+          </a>
+      </div>
+  </div>
+
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <h1>Discover the Best <span id="span1">Glasses</span></h1>
+        <button onclick="scrollToSection('about')">Discover more</button>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <h2>About Us</h2>
+    </section>
+    <section class="login-signup" style="position: relative;">
+      <!-- Login Form -->
+      <div class="login-form" style="position: absolute; top: 0; left: 0; display: none;">
+       
+         
+          <a class="btn btn-lg btn-success" href="{% url 'login' %}">Login</a>
+          
+          <h3>Login</h3>
+          <form action="{% url 'login' %}" method="post" >
+            {% if request.user.is_authenticated %}
+              <div class="form-group">
+                  <label for="login-username">Username:</label>
+                  <input type="text" id="login-username" name="username" placeholder="Enter your username" required />
+              </div>
+              <div class="form-group">
+                  <label for="login-password">Password:</label>
+                  <input type="password" id="login-password" name="password" placeholder="Enter your password" required />
+              </div>
+              {% else %}
+              <button type="submit">Login</button>
+              {% endif %}
+          </form>
+      </div>
+      
+      <!-- Sign-up Form -->
+     <div class="signup-form" style="position: none; top: 0; left: 0; display: none;">
+            <h3>Sign Up</h3>
+            <form method="post" action="{% url 'registration' %}">
+                {% csrf_token %}
+               
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+  </section>
+
+    <section id="about" class="about-us">
+      <div class="container">
+        <div class="title">Who We Are</div>
+        <p>
+          At our core, we are passionate about enhancing your vision and style
+          with our curated collection of glasses. As a dedicated team of eyewear
+          enthusiasts, we strive to provide exceptional quality, unparalleled
+          service, and trendy designs that cater to your unique preferences.
+          With a focus on both fashion and functionality, we aim to empower you
+          to express your individuality confidently. Welcome to our world of
+          eyewear excellence.
+        </p>
+        <div class="title">What We Do</div>
+        <p>
+          At Visual World, we are committed to revolutionizing the eyewear
+          shopping experience. Our mission is to offer a diverse range of
+          high-quality glasses that blend fashion-forward aesthetics with
+          cutting-edge technology. From trendy frames to innovative lens
+          options, we cater to every style and vision need. With a seamless
+          online platform and personalized customer service, we make it easy for
+          you to find the perfect pair of glasses that not only complements your
+          look but also enhances your visual clarity. Discover the difference
+          with Visual World – where style meets functionality.
+        </p>
+        <div class="title" id="title3">Why Choose Us</div>
+        <p>
+          Why Choose Us? Our dedication to excellence is evident in every aspect
+          of our service. From the meticulous selection of premium materials to
+          the latest trends in eyewear fashion, we strive to exceed your
+          expectations. With a focus on customer satisfaction, personalized
+          assistance, and affordable pricing, we make choosing the perfect pair
+          of glasses an enjoyable and rewarding experience. Trust us to deliver
+          unparalleled quality, style, and value with every purchase.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <h2>Our Services</h2>
+    </section>
+    <section id="services" class="services">
+      <div class="container">
+        <div class="options">
+          <button
+            style="
+              background: #b84022;
+              color: white;
+              border: none;
+              padding: 10px 20px;
+              cursor: pointer;
+              font-size: 16px;
+              font-weight: bold;
+              border-radius: 5px;
+              transition: all 0.5s;
+              margin-top: 3em;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            "
+            id="sunglasses-btn"
+            class="option-btn active"
+            onclick="showSunglasses()"
+          >
+            Sunglasses
+          </button>
+          <button
+            style="
+              background: #b84022;
+              color: white;
+              border: none;
+              padding: 10px 20px;
+              cursor: pointer;
+              font-size: 16px;
+              font-weight: bold;
+              border-radius: 5px;
+              transition: all 0.5s;
+              margin-top: 3em;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            "
+            id="glasses-btn"
+            class="option-btn"
+            onclick="showGlasses()"
+          >
+            Seen glasses
+          </button>
+        </div>
+        <div class="gallery">
+          <div class="service-item sunglasses">
+            <img
+              src="{% static 'images/sunglasses-1.jpg' %}"
+              alt="Sunglasses 1"
+            />
+            <div class="overlay"><small>Seen glasses</small></div>
+            <div class="description">
+              <p
+                style="
+                  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                    sans-serif;
+                "
+              >
+                Discover more types of sunglasses
+              </p>
+              <hr />
+              <button id="sunGlassesBtn">
+                <a
+                  style="
+                    text-decoration: none;
+                    color: whitesmoke;
+                    font-weight: bold;
+                  "
+                  href="{% url 'sun_glasses' %}"
+                  >Discover now</a
+                >
+                <i class="fa-solid fa-bomb"></i>
+              </button>
+            </div>
+          </div>
+          <!-- Repeat similar structure for other items -->
+          <div class="service-item glasses hidden">
+            <img
+              src="{% static 'images/seen-glasses-1.jpg' %}"
+              alt="Glasses 1"
+            />
+            <div class="overlay"><small>Seen glasses</small></div>
+            <div class="description">
+              <p
+                style="
+                  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                    sans-serif;
+                "
+              >
+                Discover more types of Seen Glasses
+              </p>
+              <hr />
+              <button
+              id="seenGlassesBtn">
+                <a
+                  style="
+                    text-decoration: none;
+                    color: whitesmoke;
+                    font-weight: bold;
+                  "
+                  href="{% url 'sun_glasses' %}?scrollTo=seenglasses_01"
+                  >Discover now</a
+                >
+                <i class="fa-solid fa-bomb"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+</section>
+
+
+    <section class="section-title">
+      <h2>Meet the Team</h2>
+    </section>
+    <section id="team" class="team">
+      <div class="container">
+        <div class="team-member">
+          <img
+            src="{% static 'images/hassan-hamrane1.jpeg' %}"
+            alt="Founder 1"
+          />
+          <h3
+            style="
+              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                sans-serif;
+            "
+          >
+            Hamrane hassan
+          </h3>
+          <p style="font-family: 'Courier New', Courier, monospace">Founder</p>
+        </div>
+        <div class="team-member">
+          <img
+            src="{% static 'images/hamza-touraif1.jpeg' %}"
+            alt="Founder 1"
+          />
+          <h3
+            style="
+              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                sans-serif;
+            "
+          >
+            Touraif Hamza
+          </h3>
+          <p style="font-family: 'Courier New', Courier, monospace">Founder</p>
+        </div>
+        <div class="team-member">
+          <img src="{% static 'images/mohsin-photo.png' %}" alt="Founder 2" />
+          <h3
+            style="
+              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                sans-serif;
+            "
+          >
+            Jaiba Mouhssine
+          </h3>
+          <p style="font-family: 'Courier New', Courier, monospace">Founder</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <h2>Contact Us</h2>
+    </section>
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-info">
+          <h3 style="border-bottom: 2px solid orangered">Contact Info</h3>
+          <p>Location: 20000, Casablanca</p>
+          <p>Email: TouraifHamza@gmail.com</p>
+          <p>Email: Jaibamohsin1@gmail.com</p>
+          <p>Email: HamraneHassan@gmail.com</p>
+          <p>Phone: +212 6 25 44 00 23</p>
+        </div>
+        <div class="contact-form">
+          <h3 style="border-bottom: 2px solid orangered">Leave Us a Message</h3>
+          <form method="post" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/mohsin.JB.La.D.o.O.s.S"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+        <a href="https://www.facebook.com/mohsin.JB.La.D.o.O.s.S"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/mouhssine-jaiba-35586a234/"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a href="https://github.com/mouhssine07"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a href="https://discord.com/channels/@%E1%96%BE%C9%91%E2%80%94MOHSIN"
+          ><i class="fa-brands fa-discord"></i
+        ></a>
+      </div>
+      <p>&copy; 2024 Visual Worlds. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

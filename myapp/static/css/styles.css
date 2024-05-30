@@ -1,0 +1,479 @@
+@import url("https://fonts.googleapis.com/css2?family=Danfo&family=Poetsen+One&display=swap");
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  /* background: rgba(0, 0, 0, 0.5); */
+  background: transparent;
+  border-radius: 0px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+  z-index: 1000;
+  transition: all 0.5s;
+}
+
+header.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 20px;
+  width: 100%;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ebf4f5;
+  font-family: "Poetsen One", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-top: 1em;
+  margin-right: 2em;
+  padding-right: 3em;
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #ebf4f5;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: color 0.5s;
+}
+
+header nav ul li a:hover {
+  color: #b84022;
+}
+
+.hero {
+  height: 80vh;
+  width: 100%;
+  /* background: url("images/Glassess-wallpaper.jpg") no-repeat center center/cover; */
+  background-image: url("../images/Glassess-wallpaper.jpg"); /* Adjust the path as needed */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* background: url("images/green-glasses.jpg") no-repeat center center/cover; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-text {
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#span1 {
+  color: #b84022;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text button {
+  padding: 13px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: transparent;
+  /* color: #b84022; */
+  color: white;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.5s;
+  margin-top: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text button:hover {
+  background: #b84022;
+  color: #ccc;
+}
+
+.section-title {
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  display: inline-block;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #b84022;
+  color: #3b3c36;
+}
+
+.about-us,
+.services,
+.team,
+.contact {
+  padding: 50px 20px;
+}
+
+.about-us {
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+  font-size: 15px;
+}
+
+.about-us .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-us .title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin: 0 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #b84022;
+  width: 50%;
+  border-bottom: 1px solid #b8dea2;
+  padding-bottom: 20px;
+  display: inline-block;
+  color: #666;
+}
+
+.about-us p {
+  text-align: justify;
+  margin: 20px 0;
+  width: 50%;
+  font-family: "Open Sans", sans-serif;
+  color: #888;
+  line-height: 24px;
+}
+
+#team-section {
+  padding: 100px 0;
+}
+.section-title.center {
+  padding: 30px 0;
+}
+#team-section h3 {
+  border-top: 1px solid #b8dea2;
+  padding-top: 20px;
+  display: inline-block;
+}
+img.team-img {
+  width: 160px;
+  height: 160px;
+  border: 0;
+  transition: all 0.5s;
+  margin: 0;
+}
+#team-section .thumbnail {
+  background: transparent;
+  border: 0;
+}
+#team-section .thumbnail .caption {
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.options {
+  margin-bottom: 20px;
+}
+
+.option-btn {
+  background-color: #ccc;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.option-btn.active {
+  background-color: #999;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  position: relative;
+}
+
+.service-item {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+
+.service-item img {
+  width: 100%;
+  height: 200px; /* Set a fixed height for all images */
+  object-fit: cover; /* Ensure the images cover the container without distortion */
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.service-item:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.1); /* Adjust the opacity here */
+  padding-top: 25%;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  z-index: 2; /* Set the z-index of the overlay */
+}
+
+.service-item:hover .overlay {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay small {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f6f6f6;
+}
+/* Add this CSS to your styles.css */
+.service-item {
+  position: relative;
+}
+
+.service-item .overlay {
+  display: none; /* Initial state is hidden */
+}
+
+.service-item .description {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  z-index: 1000;
+}
+
+.service-item .description button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+/* Show the description smoothly */
+.service-item:hover .description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team .container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.contact .container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact-info,
+.contact-form {
+  width: 45%;
+}
+
+.contact-info h3,
+.contact-form h3 {
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+footer {
+  padding: 20px;
+  background: #333;
+  color: white;
+  text-align: center;
+}
+
+footer .social-icons a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer p {
+  margin: 10px 0 0;
+}
+
+/* Fade-in effect */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.register_icons {
+  border: 2px solid #b84022;
+  border-radius: 5%;
+  padding: 10px;
+  margin: 0 10px;
+  transition: all 0.5s;
+}
+.register_icons:hover {
+  background: #b84022;
+  color: white;
+}
+.login-signup {
+  position: relative;
+  background-color: #f0f0f0; /* Special background color */
+  padding: 50px 0; /* Add padding for spacing */
+  text-align: center; /* Center align the content */
+}
+
+.login-form,
+.signup-form {
+  display: none;
+  position: relative;
+  margin: auto; /* Center horizontally */
+  margin-left: 40%;
+  max-width: 400px; /* Set maximum width */
+  background-color: #fff; /* Background color for the form */
+  padding: 20px; /* Add padding */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+  z-index: 1; /* Set z-index to bring the form to the front */
+}
+
+.login-form h3,
+.signup-form h3 {
+  font-family: Arial, sans-serif; /* Better font-family */
+}
+
+.login-form .form-group,
+.signup-form .form-group {
+  margin-bottom: 20px; /* Add spacing between form groups */
+}
+
+.login-form input,
+.signup-form input {
+  width: 100%; /* Full width input */
+  padding: 10px; /* Add padding */
+  font-size: 16px; /* Larger font size */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.login-form button,
+.signup-form button {
+  width: 100%; /* Full width button */
+  padding: 10px; /* Add padding */
+  background-color: #b84022; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Add cursor pointer */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Font weight */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.login-form button:hover,
+.signup-form button:hover {
+  background-color: #a1301d; /* Darker background color on hover */
+}
